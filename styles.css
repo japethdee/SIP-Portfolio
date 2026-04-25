@@ -560,7 +560,7 @@ main {
 }
 
 #conversion .card {
-  background: rgba(255, 250, 245, 0.68);
+  background: rgba(255, 250, 245, 0.88);
   border-color: rgba(74, 57, 49, 0.22);
 }
 
@@ -753,12 +753,13 @@ main {
 .image-viewer {
   position: fixed;
   inset: 0;
-  z-index: 120;
+  z-index: 9999;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: rgba(31, 21, 17, 0.62);
+  padding: 2rem;
+  background: rgba(47, 36, 31, 0.62); /* richer dark coffee, more opacity */
+backdrop-filter: blur(8px);
 }
 
 .image-viewer.open {
@@ -774,21 +775,28 @@ main {
 
 .image-viewer-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border: 1px solid rgba(246, 237, 228, 0.75);
-  background: rgba(47, 36, 31, 0.92);
-  color: var(--latte-100);
-  border-radius: 999px;
-  padding: 0.45rem 0.9rem;
-  font: inherit;
-  font-weight: 700;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10000; 
+  border: 1px solid rgba(246, 237, 228, 0.5);
+  background: var(--coffee-800);
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .image-viewer-close:hover,
-.image-viewer-close:focus-visible {
-  background: rgba(31, 21, 17, 0.9);
+  .image-viewer-close:focus-visible {
+  background: rgba(74, 57, 49, 0.98);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(31,21,17,0.28);
 }
 
 #conversion .image-slot.filled img {
