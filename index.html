@@ -481,7 +481,11 @@
     );
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
 
     const imageViewer = document.getElementById('imageViewer');
     const imageViewerImg = document.getElementById('imageViewerImg');
